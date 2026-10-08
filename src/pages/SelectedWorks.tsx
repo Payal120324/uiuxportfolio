@@ -6,39 +6,63 @@ import './ScrollStack.css';
 const projects = [
   {
     id: "001",
-    title: "Enterprise Resource Architecture",
-    stack: "React / Node.js / Firebase / Firestore",
-    description: "A full-stack ERP engine automating multi-currency invoicing, inventory logic, and international tax compliance for distributed teams.",
-    links: { live: "https://erpbeta.netlify.app", code: "#" },
+    title: "FoodMap — Local Food Waste Reduction",
+    stack: "UI/UX Design / Figma / Prototyping",
+    description: "Designed a food discovery and ordering experience connecting residents with local food vendors and surplus food. Created user flows, wireframes, and high-fidelity responsive screens in Figma for vendor posting, checkout, order confirmation/status, pickup, and profile interactions.",
+    links: { live: "https://www.figma.com/design/w9dXLgxxmEtJtLogqvM6XA/food-map?node-id=0-1&t=9YBkNFqCaFxaYDVU-1", code: "#" },
     image: "/p1.png",
-    cta: "Live Project"
+    cta: "View on Figma",
+    theme: {
+      bg: "from-[#1a0e06] via-[#0d0d0d] to-[#000000]",
+      border: "border-orange-500/20",
+      glow: "from-orange-500/20",
+      imgClass: "w-full h-full object-cover rounded-2xl",
+    }
   },
   {
     id: "002",
-    title: "Geospatial Workforce Analytics",
-    stack: "React / Redux / Google Maps API/ Firebase",
-    description: "Real-time tracking system implementing location-based validation protocols and live route visualization for workforce monitoring.",
-    links: { live: "#", code: "#" },
+    title: "Netflix Clone — Streaming Interface",
+    stack: "UI/UX Design / Figma / Responsive Design",
+    description: "Designed a Netflix-inspired streaming interface focused on content discovery, browsing, search, categories, and responsive viewing experiences. Created structured user flows, responsive screens, reusable UI components, and consistent visual hierarchy for intuitive navigation.",
+    links: { live: "https://www.figma.com/design/7N3AXl7osy4BwCPFMM47BI/Untitled?node-id=0-1&t=HzvAh8JBSGLvKIsZ-1", code: "#" },
     image: "/p2.png",
-    cta: "Live Project"
+    cta: "View on Figma",
+    theme: {
+      bg: "from-[#220407] via-[#100305] to-[#050102]",
+      border: "border-red-600/30",
+      glow: "from-red-600/35",
+      imgClass: "max-h-[82%] max-w-[82%] object-contain drop-shadow-[0_12px_40px_rgba(229,9,20,0.6)]",
+    }
   },
   {
     id: "003",
-    title: "OrderEase: Real-time online table food ordering system",
-    stack: "React / Firebase / Node.js",
-    description: "A real-time restaurant table ordering system that allows customers to place food orders directly from their table while enabling admins to manage menus, waiters, and assign waiters to customers for seamless service coordination.",
-    links: { live: "https://github.com/MAHESHPPAI/OrderEase", code: "#" },
-    image: "./p3.png",
-    cta: "View on Github"
+    title: "Kaggle Redesign — Data Science Platform",
+    stack: "UI/UX Design / Figma / Information Architecture",
+    description: "Redesigned Kaggle's community and competition platform with enhanced navigation, modern data-centric UI layouts, intuitive dataset exploration, and streamlined user interactions for data scientists.",
+    links: { live: "https://www.figma.com/design/VUvjTqBboTkGHYsNbpECrf/Kaggle?t=HzvAh8JBSGLvKIsZ-1", code: "#" },
+    image: "/p3.png",
+    cta: "View on Figma",
+    theme: {
+      bg: "from-[#031326] via-[#0a0f18] to-[#000000]",
+      border: "border-sky-500/20",
+      glow: "from-sky-500/20",
+      imgClass: "w-full h-full object-cover rounded-2xl",
+    }
   },
   {
     id: "004",
-    title: "BusBuddy: Transit Management Logic",
-    stack: "React / Firebase / Springboot / ngrok",
-    description: "A real-time campus transportation platform that enables students to book seats and track buses live, drivers to stream GPS data during journeys, and transport officers to manage fleet availability, monitoring, and notifications seamlessly.",
-    links: { live: "https://github.com/MAHESHPPAI/Busbuddy-latest", code: "#" },
-    image: "./p4.png",
-    cta: "View on Github"
+    title: "Shopping App — E-Commerce Experience",
+    stack: "UI/UX Design / Figma / Mobile UI Design",
+    description: "Crafted a seamless mobile shopping experience featuring intuitive product discovery, rich visual cataloging, streamlined cart and checkout flows, and personalized beauty and lifestyle recommendations.",
+    links: { live: "https://www.figma.com/design/PjUHSVVxuagPXXMlCPzMuY/Nyka?t=HzvAh8JBSGLvKIsZ-1", code: "#" },
+    image: "/p4.png",
+    cta: "View on Figma",
+    theme: {
+      bg: "from-[#02181d] via-[#071317] to-[#000000]",
+      border: "border-teal-500/20",
+      glow: "from-teal-500/20",
+      imgClass: "max-h-[92%] max-w-[92%] object-contain rounded-2xl drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)]",
+    }
   },
 ];
 
@@ -78,12 +102,18 @@ const ScrollStackCard = ({ project, index }: ScrollStackCardProps) => {
       </div>
 
       <div className="content-grid">
-        <img
-          src={project.image}
-          className="main-image w-full h-auto object-contain"
-          alt={project.title}
-          onLoad={() => window.dispatchEvent(new Event('resize'))}
-        />
+        <div className={`project-media-showcase relative w-full h-full rounded-[28px] overflow-hidden bg-gradient-to-br ${project.theme.bg} border ${project.theme.border} flex items-center justify-center p-2.5 md:p-4 group`}>
+          {/* Ambient Spotlight */}
+          <div className={`absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] ${project.theme.glow} via-transparent to-transparent pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity duration-500`} />
+          
+          <img
+            src={project.image}
+            className={`relative z-10 transition-transform duration-500 group-hover:scale-[1.03] ${project.theme.imgClass}`}
+            alt={project.title}
+            onLoad={() => window.dispatchEvent(new Event('resize'))}
+          />
+        </div>
+
         <div className="project-description">
           <p>{project.description}</p>
         </div>

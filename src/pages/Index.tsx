@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { motion, useSpring, useMotionValue, useScroll, useTransform } from "framer-motion";
-import { Github, Linkedin, Instagram, Mail } from "lucide-react";
+import { Github, Linkedin, Instagram, Mail, ExternalLink } from "lucide-react";
 
 // Components
 import About from "./About";
@@ -9,7 +9,6 @@ import SelectedWorks from "./SelectedWorks";
 import VectorBridge from "./VectorBridge";
 import Footer from "./Footer";
 import Contact from "./Contact";
-import Testimonial from "./Testimonial";
 import Navigation from "@/components/Navigation";
 
 // --- Cursor Follower ---
@@ -40,7 +39,7 @@ const CursorFollower = () => {
 const BrandLogo = () => (
   <div className="fixed top-6 left-6 md:top-8 md:left-10 z-50 mix-blend-difference">
     <h1 className="font-sans font-black text-2xl md:text-4xl tracking-tighter text-white flex items-start">
-      MAHESH
+      PAYAL
       <span className="text-xs md:text-lg font-medium ml-1 -mt-1 md:-mt-2">®</span>
     </h1>
   </div>
@@ -66,10 +65,10 @@ const AvailabilityBadge = () => (
 
 const SocialStrip = () => {
   const socials = [
-    { label: "GitHub", href: "https://github.com/MAHESHPPAI" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/mahesh-p-pai-b0987b2a8/" },
-    { label: "Instagram", href: "https://www.instagram.com/mahesh_3.14_/" },
-    { label: "Email", href: "mailto:maheshpailinked@gmail.com" },
+    { label: "LinkedIn", href: "www.linkedin.com/in/payal-salve-09139b28b" },
+    { label: "GitHub", href: "https://github.com/Payal120324" },
+    { label: "Medium", href: "https://medium.com/@payalhons1203" },
+   
   ];
   return (
     <motion.div
@@ -137,10 +136,9 @@ const SpinningCTA = () => (
 
 const MobileSocialStrip = () => {
   const socials = [
-    { label: "Github", icon: Github, href: "https://github.com/MAHESHPPAI" },
-    { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/mahesh-p-pai-b0987b2a8/" },
-    { label: "Instagram", icon: Instagram, href: "https://www.instagram.com/mahesh_3.14_/" },
-    { label: "Email", icon: Mail, href: "mailto:maheshpailinked@gmail.com" },
+    { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/payalsalve/" },
+    { label: "Github", icon: Github, href: "https://github.com/payalsalve" },
+    { label: "Email", icon: Mail, href: "mailto:payalsalve2112@gmail.com" },
   ];
   return (
     <motion.div
@@ -187,8 +185,8 @@ const Index = () => {
         <SpinningCTA />
         <div className="hidden lg:block"><SplashCursor /></div>
 
-        {/* Mobile Midpoint Buffer: 80px total height from top to clear hamburger (Hamburger at 24px + 56px height) */}
-        <div className="h-[32px] w-full md:hidden" /> {/* py-12 (48px) + 32px = 80px */}
+        {/* Mobile Midpoint Buffer */}
+        <div className="h-[32px] w-full md:hidden" />
 
         {/* Dynamic Centering Container for Mobile Socials */}
         <div className="flex-1 flex flex-col items-end justify-center md:hidden pr-0 z-10 pointer-events-none">
@@ -214,6 +212,30 @@ const Index = () => {
             <h1 className="font-sans font-bold text-7xl md:text-8xl lg:text-[9rem] xl:text-[11rem] leading-[0.85] tracking-tighter text-white uppercase text-left">
               Driven<br />by logic
             </h1>
+
+            {/* Tech Portfolio Button */}
+            <div className="mt-6 md:mt-8">
+              <a
+                href="https://portfolio-eta-livid-90.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center gap-3 overflow-hidden border border-white/40 bg-white/5 backdrop-blur-sm px-6 py-3.5 md:px-8 md:py-4 font-sans font-bold text-xs md:text-sm uppercase tracking-[0.25em] text-white hover:border-white hover:bg-white hover:text-black transition-all duration-300"
+              >
+                <span className="relative z-10 flex items-center gap-2.5">
+                  Tech Portfolio
+                  <svg
+                    className="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
+                    <path d="M7 17L17 7M17 7H7M17 7v10" />
+                  </svg>
+                </span>
+                <span className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+              </a>
+            </div>
           </motion.div>
         </div>
 
@@ -226,7 +248,7 @@ const Index = () => {
           >
             <div className="w-12 h-[2px] bg-white mb-6 md:hidden" />
             <p className="font-sans text-xs md:text-sm font-medium text-white leading-relaxed tracking-wide uppercase text-left">
-              Building robust software, automating the complex and focused on transforming static systems into intelligent ones.
+              Building AI-powered applications, data-driven systems, and responsive digital products with a focus on practical, user-centered solutions.
             </p>
           </motion.div>
         </div>
@@ -242,10 +264,6 @@ const Index = () => {
 
         <div className="bg-white text-black relative z-20">
           <VectorBridge />
-        </div>
-
-        <div className="bg-black text-white relative z-20">
-          <Testimonial />
         </div>
 
         {/* Change contact layer to z-20 and relative so it scrolls normally OVER the footer */}

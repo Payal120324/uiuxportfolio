@@ -60,10 +60,10 @@ const About = () => {
             </h3>
             <div className="flex flex-col">
               <p className="font-sans text-xl md:text-2xl lg:text-3xl font-bold leading-tight tracking-tight">
-                Indian Institute of Information Technology, Kottayam
+                Ramnarain Ruia Autonomous College
               </p>
               <p className="font-sans text-xl md:text-2xl lg:text-3xl font-normal text-black/70 leading-tight tracking-tight">
-                B.Tech, Computer Science & Engineering (2023–2027)
+                Bachelor of Computer Science (NEP) (2023–2027) • CGPA 8.86
               </p>
             </div>
           </motion.div>
@@ -78,20 +78,30 @@ const About = () => {
               {/* Job 1 */}
               <div>
                 <p className="font-sans text-xl md:text-2xl lg:text-3xl font-bold leading-tight tracking-tight">
-                  aiRender Technologies
+                  Google Gemini Student Ambassador
                 </p>
                 <p className="font-sans text-xl md:text-2xl lg:text-3xl font-normal text-black/70 leading-tight tracking-tight">
-                  Full Stack Developer (May 2025 – May 2026)
+                  Ping Digital Broadcast Pvt. Ltd. (Mar 2026 – Present)
                 </p>
               </div>
 
               {/* Job 2 */}
               <div>
                 <p className="font-sans text-xl md:text-2xl lg:text-3xl font-bold leading-tight tracking-tight">
-                  Infosys Springboard
+                  Data Science Intern
                 </p>
                 <p className="font-sans text-xl md:text-2xl lg:text-3xl font-normal text-black/70 leading-tight tracking-tight">
-                  Web Development Intern (Oct 2024 – Dec 2024)
+                  SORT Solution (May 2025 – Jul 2025)
+                </p>
+              </div>
+
+              {/* Job 3 */}
+              <div>
+                <p className="font-sans text-xl md:text-2xl lg:text-3xl font-bold leading-tight tracking-tight">
+                  Campus Ambassador
+                </p>
+                <p className="font-sans text-xl md:text-2xl lg:text-3xl font-normal text-black/70 leading-tight tracking-tight">
+                  Techfest IIT Bombay (Jul 2026 – Present)
                 </p>
               </div>
             </div>
@@ -104,10 +114,10 @@ const About = () => {
             </h3>
             <ul className="flex flex-col">
               <li className="font-sans text-xl md:text-2xl lg:text-3xl font-bold leading-tight tracking-tight">
-                Software Engineering Architecture
+                UI/UX & Responsive Digital Product Design
               </li>
               <li className="font-sans text-xl md:text-2xl lg:text-3xl font-bold leading-tight tracking-tight">
-                Artificial Intelligence & Process Automation
+                AI / Machine Learning & Data-Driven Systems
               </li>
             </ul>
           </motion.div>
